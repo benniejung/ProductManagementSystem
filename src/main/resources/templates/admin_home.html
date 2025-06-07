@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:insert="~{common :: commonHead}">
+  <title>Admin Dashboard</title>
+</head>
+
+<body class="d-flex justify-content-center align-items-center min-vh-100">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0 text-center">관리자 대시보드</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <h5 class="card-title">사용자 관리</h5>
+                  <p class="card-text">모든 사용자를 조회합니다.</p>
+                  <a th:href="@{/ProductManagementApp/users}" class="btn btn-primary">전체 사용자 목록 보기</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <h5 class="card-title">상품 관리</h5>
+                  <p class="card-text">모든 상품을 조회 및 관리합니다.</p>
+                  <a th:href="@{/products}" class="btn btn-primary">상품 목록 보기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 text-center">
+            <form th:action="@{/logout}" method="post">
+              <button type="submit" class="btn btn-danger">로그아웃</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS fragment 삽입 -->
+<div th:insert="~{common :: commonScript}"></div>
+</body>
+</html>
