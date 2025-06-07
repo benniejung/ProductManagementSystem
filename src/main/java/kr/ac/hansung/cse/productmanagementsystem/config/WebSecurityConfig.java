@@ -46,7 +46,7 @@ public class WebSecurityConfig {
                 if (authorities.contains("ROLE_ADMIN")) {
                     response.sendRedirect("/ProductManagementApp/admin/home");
                 } else {
-                    response.sendRedirect("/products");
+                    response.sendRedirect("/ProductManagementApp/products");
                 }
             }
         };
